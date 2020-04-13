@@ -18,6 +18,17 @@ void Paddle::draw(RenderTarget& target, RenderStates state) const
 void Paddle::update()
 {
 	this->shape.move(this->velocity);
+	if (Keyboard::isKeyPressed(Keyboard::Key::Left) && this->left() > 0) {
+		velocity.x = -paddleVelocity;
+	}
+	else if (Keyboard::isKeyPressed(Keyboard::Key::Right) && this->right() < 800)
+	{
+		velocity.x = paddleVelocity;
+	}
+	else
+	{
+		velocity.x = 0;
+	}
 }
 
 float Paddle::left()
@@ -36,4 +47,3 @@ float Paddle::bottom()
 {
 	return this->shape.getPosition().y + shape.getSize().y / 2.f;
 }
-
