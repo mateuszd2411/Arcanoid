@@ -11,6 +11,13 @@ public:
 
 	void update(); // aktualizacja kulki z klatki na klatke
 
+	void moveUp();	 //metody poruszania sie kulki
+	void moveDown();
+	void moveRight();
+	void moveLeft();
+
+	Vector2f getPosition();
+
 	float left();					///krawedzie kulki
 	float right();
 	float top();
